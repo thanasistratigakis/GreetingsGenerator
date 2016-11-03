@@ -28,8 +28,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameTextField.addTarget(self, action: #selector(fieldChanged), for: UIControlEvents.editingChanged)
-        greetingsTextField.addTarget(self, action: #selector(fieldChanged), for: UIControlEvents.editingChanged)
+        nameTextField.addTarget(self, action: #selector(updateGreetingsLabel), for: UIControlEvents.editingChanged)
+        greetingsTextField.addTarget(self, action: #selector(updateGreetingsLabel), for: UIControlEvents.editingChanged)
     }
     
     @IBAction func stateChanged(_ sender: UISegmentedControl) {
@@ -68,10 +68,5 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    func fieldChanged() {
-        updateGreetingsLabel()
-    }
-
 }
 
